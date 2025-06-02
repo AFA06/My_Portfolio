@@ -18,12 +18,50 @@ Tools: Java Window Builder 🛠️, H2 Database 📊
 Security: Bearer Token Authentication 🔒  
 Frontend: HTML 🌐, CSS 🎨, JavaScript 💻 (React)
 
+How to Run 🏃‍♂️
+Portfolio Website 🌐
+
+Clone the repository: git clone [portfolio-repo-url] 📥  
+Navigate to the directory: cd Portfolio 📂  
+Install dependencies: npm install 🛠️  
+Start the app: npm start 🚀  
+Open http://localhost:3000 in your browser 🌍
+
+Desktop Screenshot Tool 📸
+
+Navigate to the project: cd desktop-screenshot-tool 📂  
+Install dependencies: pip install pyautogui 🛠️  
+Run: python main.py 🐍
+
+Medicine Tracker 💊
+
+Navigate to the project: cd medicine-tracker 📂  
+Install dependencies: pip install tk 🛠️  
+Run: python medicine_tracker.py 🐍
+
+Hospital Management System 🏨
+
+Open the project in Eclipse with Window Builder 🖥️  
+Import the project folder 📂  
+Run the main file (e.g., HospitalManagementSystem.java) as a Java Application ☕
+
+BrighterYou - Mental Health Support App 🧠
+Backend (Spring Boot):  
+
+Navigate to backend: cd brighteryou/backend 📂  
+Build: mvn clean install 🛠️  
+Run: mvn spring-boot:run 🌱Frontend (React):  
+Navigate to frontend: cd brighteryou/frontend 📂  
+Install: npm install 🛠️  
+Run: npm start ⚛️  
+Open http://localhost:3000 🌍
+
 Contact 📧
 Feel free to reach out for collaboration or inquiries! 😊  
 
 Email: fattokhovabdurashid@gmail.com ✉️  
-GitHub: https://github.com/AFA06 👨‍💻  
-LinkedIn: https://www.linkedin.com/in/abdurashid-fattokhov/ 💼
+GitHub: https://github.com/AFA06  👨‍💻  
+LinkedIn:https://www.linkedin.com/in/abdurashid-fattokhov/  💼
 
 
-Last updated: June 1, 2025 ⏰
+Last updated: June 2, 2025, 05:47 PM BST ⏰
