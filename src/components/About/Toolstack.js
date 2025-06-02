@@ -29,7 +29,7 @@ function Toolstack() {
       <Col xs={4} md={2} className="tech-icons">
         <SiNotion />
       </Col>
-    <Col xs={4} md={2} className="tech-icons">
+      <Col xs={4} md={2} className="tech-icons">
         <SiTrello />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
