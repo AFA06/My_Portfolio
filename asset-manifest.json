@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/My_Portfolio/static/css/main.1897981d.css",
+    "main.js": "/My_Portfolio/static/js/main.4f84c324.js",
+    "static/js/415.4d6acbeb.chunk.js": "/My_Portfolio/static/js/415.4d6acbeb.chunk.js",
+    "static/js/787.1ed0c42c.chunk.js": "/My_Portfolio/static/js/787.1ed0c42c.chunk.js",
+    "static/media/feedback.png": "/My_Portfolio/static/media/feedback.c8f140fe89574ed2fe9b.png",
+    "static/media/hospital.png": "/My_Portfolio/static/media/hospital.243669954fab133130c7.png",
+    "static/media/medicine.png": "/My_Portfolio/static/media/medicine.5409635bd4eef7f0f434.png",
+    "static/media/desctop.png": "/My_Portfolio/static/media/desctop.fb51fd88b4a988b745a4.png",
+    "static/media/avatar.png": "/My_Portfolio/static/media/avatar.c586a3ad62909abbe1a4.png",
+    "static/media/home-main.svg": "/My_Portfolio/static/media/home-main.541f8179af8209ce03ccf2178fe62dbf.svg",
+    "static/media/about.png": "/My_Portfolio/static/media/about.aee0f771fbfc1e7b8fa8.png",
+    "static/media/home-bg.jpg": "/My_Portfolio/static/media/home-bg.dc52d5d40a40b13154b0.jpg",
+    "static/media/pre.svg": "/My_Portfolio/static/media/pre.d4812f51c8c80976eaab.svg",
+    "index.html": "/My_Portfolio/index.html",
+    "main.1897981d.css.map": "/My_Portfolio/static/css/main.1897981d.css.map",
+    "main.4f84c324.js.map": "/My_Portfolio/static/js/main.4f84c324.js.map",
+    "415.4d6acbeb.chunk.js.map": "/My_Portfolio/static/js/415.4d6acbeb.chunk.js.map",
+    "787.1ed0c42c.chunk.js.map": "/My_Portfolio/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1897981d.css",
+    "static/js/main.4f84c324.js"
+  ]
+}
