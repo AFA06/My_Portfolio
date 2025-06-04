@@ -11,7 +11,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 function ResumeNew() {
   const [width, setWidth] = useState(1200);
   const [numPages, setNumPages] = useState(null);
- const pdfURL = process.env.PUBLIC_URL + "/Abdurashid_Fattokhov_Resume.pdf";
+const pdfURL = process.env.PUBLIC_URL + "/Abdurashid_Fattokhov_Resume.pdf";
 
 
   useEffect(() => {
