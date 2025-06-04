@@ -1,7 +1,8 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "private": true,
+  "homepage": "https://AFA06.github.io/My_Portfolio",
+"private": true,
   "dependencies": {
     "@react-pdf/renderer": "^2.2.0",
     "@testing-library/jest-dom": "^5.16.2",
@@ -24,11 +25,17 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
+    
   },
+
+  
   "eslintConfig": {
     "extends": [
       "react-app",
