@@ -12,8 +12,16 @@ function Github() {
         username="AFA06"
         blockSize={15}
         blockMargin={5}
-        color="#c084f5"
         fontSize={16}
+        colorScheme="dark"
+        theme={{
+          light: ["#1e1b4b", "#6d28d9", "#9333ea", "#c084fc", "#e9d5ff"],
+          dark: ["#1e1b4b", "#6d28d9", "#9333ea", "#c084fc", "#e9d5ff"]
+        }}
+        style={{
+          maxWidth: "100%",
+          overflow: "auto"
+        }}
       />
     </Row>
   );
