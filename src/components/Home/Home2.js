@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../Assets/avatar.png";
+import myImg from "../../Assets/avatar.jpeg";
 import Tilt from "react-parallax-tilt";
 import {
   AiFillGithub,
@@ -12,50 +12,37 @@ function Home2() {
   return (
     <Container fluid className="home-about-section" id="about">
       <Container>
-        <Row>
-          <Col md={8} className="home-about-description">
-            <h1 style={{ fontSize: "2.6em" }}>
-               LET ME <span className="purple"> INTRODUCE </span> MYSELF
+        <Row className="intro-section">
+          <Col md={8} className="intro-content">
+            <h1 className="intro-title">
+              ABOUT
             </h1>
-            <p className="home-about-body">
-              I am passionate about software development and always eager to explore and build useful digital solutions.
-              <br />
-              <br />
-              My technical toolkit includes
-              <i>
-                <b className="purple"> Java, JavaScript, HTML/CSS, and Python (basic)</b>.
-              </i>
-              <br />
-              <br />
-              I specialize in
-              <i>
-                <b className="purple"> full-stack web development</b>
-              </i>
-              &nbsp;using technologies such as
-              <b className="purple"> React (Vite) on the frontend</b> and{" "}
-              <b className="purple">Spring Boot with H2/MySQL on the backend</b>.
-              <br />
-              <br />
-              My interests include building
-              <i>
-                <b className="purple"> scalable web applications, user-friendly interfaces</b>,
-              </i>
-              and exploring areas such as
-              <i>
-                <b className="purple"> cloud services and cybersecurity</b>.
-              </i>
-              <br />
-              <br />
-              I enjoy collaborating on group projects and have experience in tools like{" "}
-              <b className="purple">Git, Postman, Figma, Trello, and Notion</b> to ensure smooth development workflows.
+            
+            <p className="intro-description">
+              I'm an AI engineer and systems builder focused on developing intelligent platforms 
+              that solve real-world challenges. My work centers on creating scalable AI systems, 
+              machine learning applications, and educational technology tools that bridge the gap 
+              between cutting-edge research and practical solutions.
             </p>
+            
+            <div className="key-focus">
+              <h3 className="focus-title">Key Focus</h3>
+              <div className="focus-items">
+                <div className="focus-item">AI Systems</div>
+                <div className="focus-item">Machine Learning</div>
+                <div className="focus-item">Scalable Platforms</div>
+                <div className="focus-item">Education Technology</div>
+              </div>
+            </div>
           </Col>
-          <Col md={4} className="myAvtar">
+          
+          <Col md={4} className="intro-avatar">
             <Tilt>
-              <img src={myImg} className="img-fluid" alt="avatar" />
+              <img src={myImg} className="img-fluid intro-image" alt="avatar" />
             </Tilt>
           </Col>
         </Row>
+        
         <Row>
           <Col md={12} className="home-about-social">
             <h1>FIND ME ON</h1>
