@@ -34,7 +34,7 @@ function Footer() {
             {/* Telegram replaces Twitter here */}
             <li className="social-icons">
               <a
-                href="https://t.me/fattokhov_zafx"
+                href="https://t.me/fkhv_1"
                 style={{ color: "white" }}
                 target="_blank" 
                 rel="noopener noreferrer"
