@@ -19,7 +19,7 @@ const GithubContributionGraph = ({ username = "AFA06" }) => {
   };
 
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const days = ["", "Mon", "", "Wed", "", "Fri", ""];
 
   useEffect(() => {
     fetchContributions();
@@ -30,11 +30,11 @@ const GithubContributionGraph = ({ username = "AFA06" }) => {
       setLoading(true);
       setError(null);
       
-      // Use the correct GitHub contributions API
+      // Use correct GitHub contributions API
       const response = await axios.get(`https://github-contributions-api.jogruber.de/v4/${username}`);
       const data = response.data;
       
-      // Validate the response structure
+      // Validate response structure
       if (!data || !data.contributions || !Array.isArray(data.contributions)) {
         throw new Error("Invalid contributions data received");
       }
@@ -50,7 +50,7 @@ const GithubContributionGraph = ({ username = "AFA06" }) => {
       
       // Validate we have some data
       if (filteredContributions.length === 0) {
-        console.warn("No contributions found in the last year");
+        console.warn("No contributions found in last year");
       }
       
       setContributions(filteredContributions);
@@ -84,9 +84,9 @@ const GithubContributionGraph = ({ username = "AFA06" }) => {
 
   const getWeeks = () => {
     // Create a map of contributions by date for quick lookup
-    const contributionMap = new Map();
+    const contributionsMap = {};
     contributions.forEach(contrib => {
-      contributionMap.set(contrib.date, contrib);
+      contributionsMap[contrib.date] = contrib;
     });
 
     // Calculate date range: last 365 days ending today
@@ -110,7 +110,7 @@ const GithubContributionGraph = ({ username = "AFA06" }) => {
       // Generate 7 days for this week (Sunday to Saturday)
       for (let i = 0; i < 7; i++) {
         const dateStr = currentDate.toISOString().split('T')[0];
-        const contribution = contributionMap.get(dateStr);
+        const contribution = contributionsMap[dateStr];
         
         week.push({
           date: dateStr,
@@ -129,7 +129,7 @@ const GithubContributionGraph = ({ username = "AFA06" }) => {
 
   const getMonthLabels = () => {
     const labels = [];
-    const weekWidth = 18; // Approximate width of each week in pixels (15px box + 3px gap)
+    const weekWidth = 16; // Width per week (15px box + 3px gap + 2px padding)
     
     for (let weekIndex = 0; weekIndex < weeks.length; weekIndex++) {
       const week = weeks[weekIndex];
@@ -137,7 +137,7 @@ const GithubContributionGraph = ({ username = "AFA06" }) => {
         const firstDayOfWeek = new Date(week[0].date);
         const monthName = months[firstDayOfWeek.getMonth()];
         
-        // Only add month label if it's different from the previous week's month
+        // Only add month label if it's different from previous week's month
         if (weekIndex === 0 || 
             new Date(weeks[weekIndex - 1][0].date).getMonth() !== firstDayOfWeek.getMonth()) {
           labels.push({
@@ -182,7 +182,8 @@ const GithubContributionGraph = ({ username = "AFA06" }) => {
           marginBottom: "8px",
           paddingLeft: "40px",
           paddingRight: "10px",
-          position: "relative"
+          position: "relative",
+          zIndex: 10
         }}>
           {getMonthLabels().map((label, index) => (
             <span 
@@ -191,7 +192,8 @@ const GithubContributionGraph = ({ username = "AFA06" }) => {
                 position: "absolute",
                 left: `${label.position}px`,
                 fontSize: "10px", 
-                color: "#8b949e"
+                color: "#8b949e",
+                backgroundColor: "transparent"
               }}
             >
               {label.month}
@@ -199,8 +201,8 @@ const GithubContributionGraph = ({ username = "AFA06" }) => {
           ))}
         </div>
 
-        {/* Contribution grid */}
-        <div style={{ display: "flex", gap: "3px" }}>
+        {/* Contribution grid container */}
+        <div style={{ display: "flex", gap: "3px", overflow: "auto", zIndex: 1 }}>
           {/* Day labels */}
           <div style={{ display: "flex", flexDirection: "column", gap: "3px", marginRight: "5px" }}>
             {days.map((day, index) => (
@@ -231,7 +233,7 @@ const GithubContributionGraph = ({ username = "AFA06" }) => {
                     style={{
                       width: "15px",
                       height: "15px",
-                      backgroundColor: colors[day.level],
+                      backgroundColor: colors[day.level] || colors[0],
                       borderRadius: "2px",
                       cursor: "pointer",
                       transition: "all 0.2s ease",
@@ -247,6 +249,7 @@ const GithubContributionGraph = ({ username = "AFA06" }) => {
             ))}
           </div>
         </div>
+      </div>
 
         {/* Tooltip */}
         {hoveredDay && (
@@ -300,8 +303,7 @@ const GithubContributionGraph = ({ username = "AFA06" }) => {
           ))}
           <span style={{ marginLeft: "8px" }}>More</span>
         </div>
-      </div>
-    </Row>
+      </Row>
   );
 };
 
