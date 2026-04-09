@@ -20,83 +20,20 @@ const GithubContributionGraph = ({ username = "AFA06" }) => {
   const days = ["", "Mon", "", "Wed", "", "Fri", ""];
 
   useEffect(() => {
-    fetchGitHubData();
-  }, [username]);
-
-  const fetchGitHubData = async () => {
-    try {
-      setLoading(true);
-      setError(null);
-      
-      console.log("Token:", process.env.REACT_APP_GITHUB_TOKEN);
-      
-      if (!process.env.REACT_APP_GITHUB_TOKEN) {
-        throw new Error("GitHub token missing. Check .env file.");
+  fetch("/My_Portfolio/contributions.json")
+    .then(res => {
+      if (!res.ok) {
+        throw new Error("Failed to load contributions");
       }
-      
-      const query = `
-        query($login: String!) {
-          user(login: $login) {
-            contributionsCollection {
-              contributionCalendar {
-                totalContributions
-                weeks {
-                  contributionDays {
-                    date
-                    contributionCount
-                    contributionLevel
-                  }
-                }
-              }
-            }
-          }
-        }
-      `;
-
-      const res = await fetch("https://api.github.com/graphql", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_GITHUB_TOKEN}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          query,
-          variables: { login: username },
-        }),
-      });
-
-      console.log("Request status:", res.status);
-      
-      if (res.status !== 200) {
-        throw new Error(`HTTP ${res.status}: ${res.statusText}`);
-      }
-
-      const json = await res.json();
-      console.log("Full response:", json);
-      
-      if (json.errors) {
-        console.error("GitHub API Error:", json.errors);
-        const errorMessage = json.errors.map(err => err.message).join(', ');
-        throw new Error(`GitHub API Error: ${errorMessage}`);
-      }
-      
-      if (!json.data?.user) {
-        throw new Error("User data not found in response");
-      }
-      
-      if (!json.data.user.contributionsCollection?.contributionCalendar) {
-        throw new Error("Contribution calendar not found");
-      }
-      
-      setCalendar(json.data.user.contributionsCollection.contributionCalendar);
-      
-    } catch (err) {
-      console.error("Error fetching GitHub contributions:", err);
-      setError(err.message || "Failed to load GitHub contributions. Please try again later.");
-    } finally {
-      setLoading(false);
-    }
-  };
+      return res.json();
+    })
+    .then(data => setCalendar(data))
+    .catch(err => {
+      console.error("Fetch error:", err);
+      setError("Failed to load contributions");
+    })
+    .finally(() => setLoading(false));
+}, []);
 
   const handleMouseMove = (e) => {
     setMousePosition({ x: e.clientX, y: e.clientY });
