@@ -6,6 +6,7 @@ import feedback from "../../Assets/Projects/feedback.png";
 import hospital from "../../Assets/Projects/hospital.png";
 import desctop from "../../Assets/Projects/desctop.png";
 import medicine from "../../Assets/Projects/medicine.png";
+import strawberry from "../../Assets/Projects/strawberry.jpg";
 // Note: New project images need to be added to Assets/Projects folder
 // For now using placeholder images from existing ones
 
@@ -21,6 +22,20 @@ function Projects() {
           A selection of systems and applications I have built.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          {/* Strawberry by Feya: bilingual shop catalogue managed from a Telegram bot */}
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={strawberry}
+              isBlog={false}
+              title="Strawberry by Feya – Shop Catalogue + Telegram Bot"
+              description="A live bilingual (Russian / Uzbek) catalogue for a chocolate-strawberry shop in Tashkent. The owner manages everything from a Telegram bot: she sends a photo, name and price, and the box appears on the site instantly, with a Russian translation added automatically. Includes light and dark mode, a mobile-first design and SEO."
+              techStack={["Astro", "TypeScript", "Vercel", "Vercel Blob", "Telegram Bot API", "SEO"]}
+              ghLink="https://github.com/AFA06/strawberry-by-feya"
+              demoLink="https://strawberry-by-feya.vercel.app"
+              demoButtonText="Visit Website"
+            />
+          </Col>
+
           {/* Project 1: Desktop Screenshot Tool */}
           <Col md={4} className="project-card">
             <ProjectCard
