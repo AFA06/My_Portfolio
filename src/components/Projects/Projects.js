@@ -7,6 +7,7 @@ import hospital from "../../Assets/Projects/hospital.png";
 import desctop from "../../Assets/Projects/desctop.png";
 import medicine from "../../Assets/Projects/medicine.png";
 import strawberry from "../../Assets/Projects/strawberry.jpg";
+import retseplar from "../../Assets/Projects/retseplar.jpg";
 // Note: New project images need to be added to Assets/Projects folder
 // For now using placeholder images from existing ones
 
@@ -22,6 +23,20 @@ function Projects() {
           A selection of systems and applications I have built.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+          {/* Retseplar: my cooking startup, live and onboarding first users */}
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={retseplar}
+              isBlog={false}
+              title="Retseplar – Step-by-Step Cooking Platform (Startup)"
+              description="My startup, live in production and onboarding its first users. Chefs and creators publish free and premium recipes; home cooks follow them in a hands-free cook mode with exact amounts, built-in timers and the screen kept awake, so nobody has to rewind YouTube. Includes a shopping list, cookbooks, photo reviews, Payme payments with promo codes, a creator dashboard for sales and stats, and an admin panel."
+              techStack={["Next.js", "React", "TypeScript", "PostgreSQL", "Drizzle ORM", "Tailwind CSS", "Cloudflare R2", "Payme", "Vercel"]}
+              ghLink={null}
+              demoLink="https://coooooking1.vercel.app"
+              demoButtonText="Visit Website"
+            />
+          </Col>
+
           {/* Strawberry by Feya: bilingual shop catalogue managed from a Telegram bot */}
           <Col md={4} className="project-card">
             <ProjectCard
