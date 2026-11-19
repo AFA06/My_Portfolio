@@ -29,9 +29,9 @@ function Projects() {
               imgPath={retseplar}
               isBlog={false}
               title="Retseplar – Step-by-Step Cooking Platform (Startup)"
-              description="My startup, live in production and onboarding its first users. Chefs and creators publish free and premium recipes; home cooks follow them in a hands-free cook mode with exact amounts, built-in timers and the screen kept awake, so nobody has to rewind YouTube. Includes a shopping list, cookbooks, photo reviews, Payme payments with promo codes, a creator dashboard for sales and stats, and an admin panel."
-              techStack={["Next.js", "React", "TypeScript", "PostgreSQL", "Drizzle ORM", "Tailwind CSS", "Cloudflare R2", "Payme", "Vercel"]}
-              ghLink={null}
+              description="My startup, live in production and onboarding its first users. Chefs and creators publish free and premium recipes; home cooks follow them in a hands-free cook mode with exact amounts, built-in timers and the screen kept awake, so nobody has to rewind YouTube. Creators sell premium recipes with no commission, unlocked by secure order codes, and get promo codes and a sales dashboard. Also includes a shopping list, cookbooks, photo reviews and an admin panel. Built solo: 73 commits, about 18.7k lines of TypeScript."
+              techStack={["Next.js", "React", "TypeScript", "PostgreSQL", "Drizzle ORM", "Tailwind CSS", "Cloudflare R2", "Vercel"]}
+              ghLink="https://github.com/AFA06/retseplar"
               demoLink="https://coooooking1.vercel.app"
               demoButtonText="Visit Website"
             />
