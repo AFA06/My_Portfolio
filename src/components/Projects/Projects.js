@@ -8,6 +8,7 @@ import desctop from "../../Assets/Projects/desctop.png";
 import medicine from "../../Assets/Projects/medicine.png";
 import strawberry from "../../Assets/Projects/strawberry.jpg";
 import retseplar from "../../Assets/Projects/retseplar.jpg";
+import chatpulse from "../../Assets/Projects/chatpulse.jpg";
 // Note: New project images need to be added to Assets/Projects folder
 // For now using placeholder images from existing ones
 
@@ -48,6 +49,19 @@ function Projects() {
               ghLink="https://github.com/AFA06/strawberry-by-feya"
               demoLink="https://strawberry-by-feya.vercel.app"
               demoButtonText="Visit Website"
+            />
+          </Col>
+
+          {/* ChatPulse: privacy-first Telegram conversation analyzer */}
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={chatpulse}
+              isBlog={false}
+              title="ChatPulse – Telegram Conversation Analyzer"
+              description="A privacy-first analytics app for Telegram chat exports. It shows when each person is active, how fast they usually reply, conversation sessions and how patterns change over time, using heatmaps, response-time stats and trends. Users send their export to a Telegram bot and open the dashboard as a Telegram Mini App. Runs locally or as a multi-tenant cloud service with a separate database per user, and never sends message text to any AI or external service."
+              techStack={["Python", "FastAPI", "SQLAlchemy", "Pandas", "React", "Vite", "PostgreSQL", "Telegram Bot API", "Docker"]}
+              ghLink="https://github.com/AFA06/Telegram-Conversation-Behavioral-Analyzer"
+              demoLink={null}
             />
           </Col>
 
